@@ -3,7 +3,9 @@ package com.htyuan.animation;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,7 +49,7 @@ public class MainActivity extends ActionBarActivity {
 	/**
 	 * A placeholder fragment containing a simple view.
 	 */
-	public static class PlaceholderFragment extends Fragment {
+	public static class PlaceholderFragment extends Fragment implements View.OnClickListener{
 
 		public PlaceholderFragment() {
 		}
@@ -57,8 +59,45 @@ public class MainActivity extends ActionBarActivity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_main, container,
 					false);
+			rootView.findViewById(R.id.button1).setOnClickListener(this);
 			return rootView;
+		}
+
+		@Override
+		public void onClick(View v) {
+			Log.d("", "go to input activity");
+			
+			Intent intent = new Intent(getActivity(), InputActivity.class);
+			startActivity(intent);
 		}
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
